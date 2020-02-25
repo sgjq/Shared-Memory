@@ -31,3 +31,11 @@
 72	94	0	../lib/librwmemory.so	a8220b6c9f861ce3
 0	2043	0	CMakeFiles/tran_message.dir/main.cpp.o	7a68591570c4ac70
 2043	2355	0	tran_message	c908736370e32cd1
+1	105	0	CMakeFiles/rwmemory.dir/src/Mes_semaphore.c.o	a253b64695730e03
+1	111	0	CMakeFiles/rwmemory.dir/src/rw_sharedmemory.c.o	224cc5716562fb56
+111	178	0	../lib/librwmemory.so	a8220b6c9f861ce3
+1	2250	0	CMakeFiles/tran_message.dir/Config/mem_config.pb.cc.o	29ee555748e58b33
+0	2266	0	CMakeFiles/tran_message.dir/proto/sensor_image.pb.cc.o	2a8351bd39828ded
+0	2272	0	CMakeFiles/tran_message.dir/proto/res_message.pb.cc.o	c4cc6e9e0ad1ba1a
+1	3264	0	CMakeFiles/tran_message.dir/main.cpp.o	7a68591570c4ac70
+3264	4642	0	tran_message	c908736370e32cd1
