@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package MyMessage;
+
+
+message DetectRes {
+  required string frame_id = 1;
+
+  required double measurement_time = 2;
+
+  required int32 left_topx = 3;
+  required int32 left_topy= 4;  
+
+  required int32 right_bottomx = 5;
+  required int32 right_bottomy = 6;
+
+  required double score = 7;
+}
+
+

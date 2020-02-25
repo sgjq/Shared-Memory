@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package MyMessage;
+
+
+message MemoryConfig {
+  optional int32 MemoryKey = 1 [default = 123456];
+
+  optional int32 MemorySize = 2 [default = 12582912];
+
+  optional int32 ResShift = 3 [default = 10485760];
+
+  optional int32 SemaporeKey = 4 [default = 1234];
+  
+}
+
+
