@@ -8,10 +8,16 @@
 ## 2.运行
 
 ./pre.sh
+
 cd build
+
 cmake ..
+
 make
+
 ./tran_message
+
 cd ../python
+
 python test_mem.py
 
