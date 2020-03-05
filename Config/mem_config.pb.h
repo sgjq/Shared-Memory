@@ -179,11 +179,39 @@ class MemoryConfig :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kMemoryIdFieldNumber = 5,
+    kSemaporeIdFieldNumber = 6,
     kMemoryKeyFieldNumber = 1,
     kMemorySizeFieldNumber = 2,
     kResShiftFieldNumber = 3,
     kSemaporeKeyFieldNumber = 4,
   };
+  // optional int32 MemoryId = 5;
+  bool has_memoryid() const;
+  private:
+  bool _internal_has_memoryid() const;
+  public:
+  void clear_memoryid();
+  ::PROTOBUF_NAMESPACE_ID::int32 memoryid() const;
+  void set_memoryid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_memoryid() const;
+  void _internal_set_memoryid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // optional int32 SemaporeId = 6;
+  bool has_semaporeid() const;
+  private:
+  bool _internal_has_semaporeid() const;
+  public:
+  void clear_semaporeid();
+  ::PROTOBUF_NAMESPACE_ID::int32 semaporeid() const;
+  void set_semaporeid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_semaporeid() const;
+  void _internal_set_semaporeid(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // optional int32 MemoryKey = 1 [default = 123456];
   bool has_memorykey() const;
   private:
@@ -243,6 +271,8 @@ class MemoryConfig :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::int32 memoryid_;
+  ::PROTOBUF_NAMESPACE_ID::int32 semaporeid_;
   ::PROTOBUF_NAMESPACE_ID::int32 memorykey_;
   ::PROTOBUF_NAMESPACE_ID::int32 memorysize_;
   ::PROTOBUF_NAMESPACE_ID::int32 resshift_;
@@ -262,7 +292,7 @@ class MemoryConfig :
 
 // optional int32 MemoryKey = 1 [default = 123456];
 inline bool MemoryConfig::_internal_has_memorykey() const {
-  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool MemoryConfig::has_memorykey() const {
@@ -270,7 +300,7 @@ inline bool MemoryConfig::has_memorykey() const {
 }
 inline void MemoryConfig::clear_memorykey() {
   memorykey_ = 123456;
-  _has_bits_[0] &= ~0x00000001u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::_internal_memorykey() const {
   return memorykey_;
@@ -280,7 +310,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::memorykey() const {
   return _internal_memorykey();
 }
 inline void MemoryConfig::_internal_set_memorykey(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _has_bits_[0] |= 0x00000001u;
+  _has_bits_[0] |= 0x00000004u;
   memorykey_ = value;
 }
 inline void MemoryConfig::set_memorykey(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -290,7 +320,7 @@ inline void MemoryConfig::set_memorykey(::PROTOBUF_NAMESPACE_ID::int32 value) {
 
 // optional int32 MemorySize = 2 [default = 12582912];
 inline bool MemoryConfig::_internal_has_memorysize() const {
-  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool MemoryConfig::has_memorysize() const {
@@ -298,7 +328,7 @@ inline bool MemoryConfig::has_memorysize() const {
 }
 inline void MemoryConfig::clear_memorysize() {
   memorysize_ = 12582912;
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::_internal_memorysize() const {
   return memorysize_;
@@ -308,7 +338,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::memorysize() const {
   return _internal_memorysize();
 }
 inline void MemoryConfig::_internal_set_memorysize(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000008u;
   memorysize_ = value;
 }
 inline void MemoryConfig::set_memorysize(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -318,7 +348,7 @@ inline void MemoryConfig::set_memorysize(::PROTOBUF_NAMESPACE_ID::int32 value) {
 
 // optional int32 ResShift = 3 [default = 10485760];
 inline bool MemoryConfig::_internal_has_resshift() const {
-  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool MemoryConfig::has_resshift() const {
@@ -326,7 +356,7 @@ inline bool MemoryConfig::has_resshift() const {
 }
 inline void MemoryConfig::clear_resshift() {
   resshift_ = 10485760;
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::_internal_resshift() const {
   return resshift_;
@@ -336,7 +366,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::resshift() const {
   return _internal_resshift();
 }
 inline void MemoryConfig::_internal_set_resshift(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000010u;
   resshift_ = value;
 }
 inline void MemoryConfig::set_resshift(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -346,7 +376,7 @@ inline void MemoryConfig::set_resshift(::PROTOBUF_NAMESPACE_ID::int32 value) {
 
 // optional int32 SemaporeKey = 4 [default = 1234];
 inline bool MemoryConfig::_internal_has_semaporekey() const {
-  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool MemoryConfig::has_semaporekey() const {
@@ -354,7 +384,7 @@ inline bool MemoryConfig::has_semaporekey() const {
 }
 inline void MemoryConfig::clear_semaporekey() {
   semaporekey_ = 1234;
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::_internal_semaporekey() const {
   return semaporekey_;
@@ -364,12 +394,68 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::semaporekey() const {
   return _internal_semaporekey();
 }
 inline void MemoryConfig::_internal_set_semaporekey(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000020u;
   semaporekey_ = value;
 }
 inline void MemoryConfig::set_semaporekey(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_semaporekey(value);
   // @@protoc_insertion_point(field_set:MyMessage.MemoryConfig.SemaporeKey)
+}
+
+// optional int32 MemoryId = 5;
+inline bool MemoryConfig::_internal_has_memoryid() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool MemoryConfig::has_memoryid() const {
+  return _internal_has_memoryid();
+}
+inline void MemoryConfig::clear_memoryid() {
+  memoryid_ = 0;
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::_internal_memoryid() const {
+  return memoryid_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::memoryid() const {
+  // @@protoc_insertion_point(field_get:MyMessage.MemoryConfig.MemoryId)
+  return _internal_memoryid();
+}
+inline void MemoryConfig::_internal_set_memoryid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _has_bits_[0] |= 0x00000001u;
+  memoryid_ = value;
+}
+inline void MemoryConfig::set_memoryid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_memoryid(value);
+  // @@protoc_insertion_point(field_set:MyMessage.MemoryConfig.MemoryId)
+}
+
+// optional int32 SemaporeId = 6;
+inline bool MemoryConfig::_internal_has_semaporeid() const {
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool MemoryConfig::has_semaporeid() const {
+  return _internal_has_semaporeid();
+}
+inline void MemoryConfig::clear_semaporeid() {
+  semaporeid_ = 0;
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::_internal_semaporeid() const {
+  return semaporeid_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MemoryConfig::semaporeid() const {
+  // @@protoc_insertion_point(field_get:MyMessage.MemoryConfig.SemaporeId)
+  return _internal_semaporeid();
+}
+inline void MemoryConfig::_internal_set_semaporeid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _has_bits_[0] |= 0x00000002u;
+  semaporeid_ = value;
+}
+inline void MemoryConfig::set_semaporeid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_semaporeid(value);
+  // @@protoc_insertion_point(field_set:MyMessage.MemoryConfig.SemaporeId)
 }
 
 #ifdef __GNUC__

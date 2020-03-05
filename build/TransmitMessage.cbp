@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="TransmitMessage" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\kinetic\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\OpenCV-3.3.1-dev\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/hyz/self_driving/my_code/TransmitMessage/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/ninja -v all" />
+            <CompileFile command="/usr/bin/ninja -v &quot;$file&quot;" />
+            <Clean command="/usr/bin/ninja -v clean" />
+            <DistClean command="/usr/bin/ninja -v clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/hyz/self_driving/my_code/TransmitMessage/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/ninja -v edit_cache" />
+            <CompileFile command="/usr/bin/ninja -v &quot;$file&quot;" />
+            <Clean command="/usr/bin/ninja -v clean" />
+            <DistClean command="/usr/bin/ninja -v clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/hyz/self_driving/my_code/TransmitMessage/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/ninja -v rebuild_cache" />
+            <CompileFile command="/usr/bin/ninja -v &quot;$file&quot;" />
+            <Clean command="/usr/bin/ninja -v clean" />
+            <DistClean command="/usr/bin/ninja -v clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="tran_message">
+         <Option output="/home/hyz/self_driving/my_code/TransmitMessage/build/tran_message" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/hyz/self_driving/my_code/TransmitMessage/build" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/Config" />
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/include" />
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/proto" />
+            <Add directory="/opt/ros/kinetic/include/opencv-3.3.1-dev" />
+            <Add directory="/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/ninja -v tran_message" />
+            <CompileFile command="/usr/bin/ninja -v &quot;$file&quot;" />
+            <Clean command="/usr/bin/ninja -v clean" />
+            <DistClean command="/usr/bin/ninja -v clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="tran_message/fast">
+         <Option output="/home/hyz/self_driving/my_code/TransmitMessage/build/tran_message" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/hyz/self_driving/my_code/TransmitMessage/build" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/Config" />
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/include" />
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/proto" />
+            <Add directory="/opt/ros/kinetic/include/opencv-3.3.1-dev" />
+            <Add directory="/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/ninja -v tran_message/fast" />
+            <CompileFile command="/usr/bin/ninja -v &quot;$file&quot;" />
+            <Clean command="/usr/bin/ninja -v clean" />
+            <DistClean command="/usr/bin/ninja -v clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rwmemory">
+         <Option output="/home/hyz/self_driving/my_code/TransmitMessage/lib/librwmemory.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/hyz/self_driving/my_code/TransmitMessage/build" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/Config" />
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/include" />
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/proto" />
+            <Add directory="/opt/ros/kinetic/include/opencv-3.3.1-dev" />
+            <Add directory="/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/ninja -v rwmemory" />
+            <CompileFile command="/usr/bin/ninja -v &quot;$file&quot;" />
+            <Clean command="/usr/bin/ninja -v clean" />
+            <DistClean command="/usr/bin/ninja -v clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rwmemory/fast">
+         <Option output="/home/hyz/self_driving/my_code/TransmitMessage/lib/librwmemory.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/hyz/self_driving/my_code/TransmitMessage/build" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/Config" />
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/include" />
+            <Add directory="/home/hyz/self_driving/my_code/TransmitMessage/proto" />
+            <Add directory="/opt/ros/kinetic/include/opencv-3.3.1-dev" />
+            <Add directory="/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/ninja -v rwmemory/fast" />
+            <CompileFile command="/usr/bin/ninja -v &quot;$file&quot;" />
+            <Clean command="/usr/bin/ninja -v clean" />
+            <DistClean command="/usr/bin/ninja -v clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/hyz/self_driving/my_code/TransmitMessage/Config/mem_config.pb.cc">
+         <Option target="tran_message"/>
+      </Unit>
+      <Unit filename="/home/hyz/self_driving/my_code/TransmitMessage/main.cpp">
+         <Option target="tran_message"/>
+      </Unit>
+      <Unit filename="/home/hyz/self_driving/my_code/TransmitMessage/proto/res_message.pb.cc">
+         <Option target="tran_message"/>
+      </Unit>
+      <Unit filename="/home/hyz/self_driving/my_code/TransmitMessage/proto/sensor_image.pb.cc">
+         <Option target="tran_message"/>
+      </Unit>
+      <Unit filename="/home/hyz/self_driving/my_code/TransmitMessage/src/Mes_semaphore.c">
+         <Option target="rwmemory"/>
+      </Unit>
+      <Unit filename="/home/hyz/self_driving/my_code/TransmitMessage/src/rw_sharedmemory.c">
+         <Option target="rwmemory"/>
+      </Unit>
+      <Unit filename="/home/hyz/self_driving/my_code/TransmitMessage/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/hyz/self_driving/my_code/TransmitMessage/../../../../../opt/ros/kinetic/share/OpenCV-3.3.1-dev/OpenCVConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\OpenCV-3.3.1-dev\" />
+      </Unit>
+      <Unit filename="/home/hyz/self_driving/my_code/TransmitMessage/../../../../../opt/ros/kinetic/share/OpenCV-3.3.1-dev/OpenCVConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\OpenCV-3.3.1-dev\" />
+      </Unit>
+      <Unit filename="/home/hyz/self_driving/my_code/TransmitMessage/../../../../../opt/ros/kinetic/share/OpenCV-3.3.1-dev/OpenCVModules.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\OpenCV-3.3.1-dev\" />
+      </Unit>
+      <Unit filename="/home/hyz/self_driving/my_code/TransmitMessage/../../../../../opt/ros/kinetic/share/OpenCV-3.3.1-dev/OpenCVModules-release.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\OpenCV-3.3.1-dev\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

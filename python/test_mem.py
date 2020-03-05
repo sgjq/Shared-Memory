@@ -50,6 +50,28 @@ def init_shared_memory():
         if(ret_val == 0):
              print "init shared memory success!!"
 
+def init_sharememby_Id():
+        config = mem_config.MemoryConfig()
+        f = open("../Config/ab.bin", "rb")
+        config.ParseFromString(f.read())
+        memkey = config.MemoryKey
+        memsize = config.MemorySize
+        memshift = config.ResShift
+        semkey = config.SemaporeKey
+        memid = config.MemoryId
+        semid = config.SemaporeId
+        print "memkey:", memkey
+        print "memsize:", memsize
+        print "memshift:", memshift
+        print "semkey:", semkey
+        print "memid:", memid
+        print "semid:", semid
+
+        lib.initsharemembyId.argtypes=[ctypes.c_int, ctypes.c_int, ctypes.c_int, ctypes.c_int]
+        ret_val=lib.initsharemembyId(memid, memsize, memshift, semid)
+        if(ret_val == 0):
+             print "init shared memory success!!"
+
 def delete_shared_memory():
     ret_val = lib.detach_share_mem()
     if ret_val!=0:
@@ -127,9 +149,34 @@ def test_write_and_Read():
         serializeToString = res_mess.SerializeToString()
         write_shared_memory(serializeToString)
 
+def test_new_write_and_Read():
+    init_sharememby_Id()
+    cur_time = 0
+    res_mess = res_message.DetectRes()
+    res_mess.frame_id = "camera frame"
+    res_mess.measurement_time = 5.2
+    res_mess.left_topx = 20
+    res_mess.left_topy = 60
+    res_mess.right_bottomx = 210
+    res_mess.right_bottomy = 100
+    res_mess.score = 0.83
+    while 1:
+        while 1:
+            if lib.isNewMessage():
+                break;
+        read_string = read_share_memory()
+        image = sensor_image.Image()
+        image.ParseFromString(read_string)
+        print "image.measurement_time:", image.measurement_time
+        time.sleep(0.01)
+        cur_time = image.measurement_time
+        res_mess.measurement_time = cur_time
+        serializeToString = res_mess.SerializeToString()
+        write_shared_memory(serializeToString)
+
 
 if __name__=='__main__':
-    test_write_and_Read()
+    test_new_write_and_Read()
    
 
 

@@ -15,6 +15,8 @@ enum share_mem_type
 };
 //return 0 : success   <0 error
 extern int init_share_mem(int key, int size_, int mem_shift, int sem_key);
+extern int initsharemembyId(int memoryId, int size_, int mem_shift, int sem_Id);
+extern int getsharememoryId();
 extern int write_share_mem(char *buf,unsigned int bufsize);
 extern int read_share_mem(char *buf);
 extern int isNewMessage();

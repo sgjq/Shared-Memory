@@ -11,6 +11,10 @@ message MemoryConfig {
   optional int32 ResShift = 3 [default = 10485760];
 
   optional int32 SemaporeKey = 4 [default = 1234];
+
+  optional int32 MemoryId = 5;
+
+  optional int32 SemaporeId = 6;
   
 }
 

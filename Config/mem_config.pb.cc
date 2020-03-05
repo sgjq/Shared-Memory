@@ -48,13 +48,17 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_mem_5fconfig_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::MyMessage::MemoryConfig, memorysize_),
   PROTOBUF_FIELD_OFFSET(::MyMessage::MemoryConfig, resshift_),
   PROTOBUF_FIELD_OFFSET(::MyMessage::MemoryConfig, semaporekey_),
-  0,
-  1,
+  PROTOBUF_FIELD_OFFSET(::MyMessage::MemoryConfig, memoryid_),
+  PROTOBUF_FIELD_OFFSET(::MyMessage::MemoryConfig, semaporeid_),
   2,
   3,
+  4,
+  5,
+  0,
+  1,
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 9, sizeof(::MyMessage::MemoryConfig)},
+  { 0, 11, sizeof(::MyMessage::MemoryConfig)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -62,10 +66,11 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_mem_5fconfig_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\020mem_config.proto\022\tMyMessage\"~\n\014MemoryC"
-  "onfig\022\031\n\tMemoryKey\030\001 \001(\005:\006123456\022\034\n\nMemo"
-  "rySize\030\002 \001(\005:\01012582912\022\032\n\010ResShift\030\003 \001(\005"
-  ":\01010485760\022\031\n\013SemaporeKey\030\004 \001(\005:\0041234"
+  "\n\020mem_config.proto\022\tMyMessage\"\244\001\n\014Memory"
+  "Config\022\031\n\tMemoryKey\030\001 \001(\005:\006123456\022\034\n\nMem"
+  "orySize\030\002 \001(\005:\01012582912\022\032\n\010ResShift\030\003 \001("
+  "\005:\01010485760\022\031\n\013SemaporeKey\030\004 \001(\005:\0041234\022\020"
+  "\n\010MemoryId\030\005 \001(\005\022\022\n\nSemaporeId\030\006 \001(\005"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_mem_5fconfig_2eproto_deps[1] = {
 };
@@ -75,7 +80,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_mem
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_mem_5fconfig_2eproto_once;
 static bool descriptor_table_mem_5fconfig_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_mem_5fconfig_2eproto = {
-  &descriptor_table_mem_5fconfig_2eproto_initialized, descriptor_table_protodef_mem_5fconfig_2eproto, "mem_config.proto", 157,
+  &descriptor_table_mem_5fconfig_2eproto_initialized, descriptor_table_protodef_mem_5fconfig_2eproto, "mem_config.proto", 196,
   &descriptor_table_mem_5fconfig_2eproto_once, descriptor_table_mem_5fconfig_2eproto_sccs, descriptor_table_mem_5fconfig_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_mem_5fconfig_2eproto::offsets,
   file_level_metadata_mem_5fconfig_2eproto, 1, file_level_enum_descriptors_mem_5fconfig_2eproto, file_level_service_descriptors_mem_5fconfig_2eproto,
@@ -93,16 +98,22 @@ class MemoryConfig::_Internal {
  public:
   using HasBits = decltype(std::declval<MemoryConfig>()._has_bits_);
   static void set_has_memorykey(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_memorysize(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_resshift(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
-  static void set_has_semaporekey(HasBits* has_bits) {
+  static void set_has_memorysize(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
+  }
+  static void set_has_resshift(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+  static void set_has_semaporekey(HasBits* has_bits) {
+    (*has_bits)[0] |= 32u;
+  }
+  static void set_has_memoryid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_semaporeid(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
   }
 };
 
@@ -116,13 +127,16 @@ MemoryConfig::MemoryConfig(const MemoryConfig& from)
       _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&memorykey_, &from.memorykey_,
+  ::memcpy(&memoryid_, &from.memoryid_,
     static_cast<size_t>(reinterpret_cast<char*>(&semaporekey_) -
-    reinterpret_cast<char*>(&memorykey_)) + sizeof(semaporekey_));
+    reinterpret_cast<char*>(&memoryid_)) + sizeof(semaporekey_));
   // @@protoc_insertion_point(copy_constructor:MyMessage.MemoryConfig)
 }
 
 void MemoryConfig::SharedCtor() {
+  ::memset(&memoryid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&semaporeid_) -
+      reinterpret_cast<char*>(&memoryid_)) + sizeof(semaporeid_));
   memorykey_ = 123456;
   memorysize_ = 12582912;
   resshift_ = 10485760;
@@ -153,7 +167,10 @@ void MemoryConfig::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 0x0000003fu) {
+    ::memset(&memoryid_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&semaporeid_) -
+        reinterpret_cast<char*>(&memoryid_)) + sizeof(semaporeid_));
     memorykey_ = 123456;
     memorysize_ = 12582912;
     resshift_ = 10485760;
@@ -203,6 +220,22 @@ const char* MemoryConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // optional int32 MemoryId = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          _Internal::set_has_memoryid(&has_bits);
+          memoryid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // optional int32 SemaporeId = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          _Internal::set_has_semaporeid(&has_bits);
+          semaporeid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -232,27 +265,39 @@ failure:
 
   cached_has_bits = _has_bits_[0];
   // optional int32 MemoryKey = 1 [default = 123456];
-  if (cached_has_bits & 0x00000001u) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_memorykey(), target);
   }
 
   // optional int32 MemorySize = 2 [default = 12582912];
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_memorysize(), target);
   }
 
   // optional int32 ResShift = 3 [default = 10485760];
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_resshift(), target);
   }
 
   // optional int32 SemaporeKey = 4 [default = 1234];
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_semaporekey(), target);
+  }
+
+  // optional int32 MemoryId = 5;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_memoryid(), target);
+  }
+
+  // optional int32 SemaporeId = 6;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_semaporeid(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -272,30 +317,44 @@ size_t MemoryConfig::ByteSizeLong() const {
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
-    // optional int32 MemoryKey = 1 [default = 123456];
+  if (cached_has_bits & 0x0000003fu) {
+    // optional int32 MemoryId = 5;
     if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+          this->_internal_memoryid());
+    }
+
+    // optional int32 SemaporeId = 6;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+          this->_internal_semaporeid());
+    }
+
+    // optional int32 MemoryKey = 1 [default = 123456];
+    if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_memorykey());
     }
 
     // optional int32 MemorySize = 2 [default = 12582912];
-    if (cached_has_bits & 0x00000002u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_memorysize());
     }
 
     // optional int32 ResShift = 3 [default = 10485760];
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_resshift());
     }
 
     // optional int32 SemaporeKey = 4 [default = 1234];
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_semaporekey());
@@ -334,17 +393,23 @@ void MemoryConfig::MergeFrom(const MemoryConfig& from) {
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 0x0000003fu) {
     if (cached_has_bits & 0x00000001u) {
-      memorykey_ = from.memorykey_;
+      memoryid_ = from.memoryid_;
     }
     if (cached_has_bits & 0x00000002u) {
-      memorysize_ = from.memorysize_;
+      semaporeid_ = from.semaporeid_;
     }
     if (cached_has_bits & 0x00000004u) {
-      resshift_ = from.resshift_;
+      memorykey_ = from.memorykey_;
     }
     if (cached_has_bits & 0x00000008u) {
+      memorysize_ = from.memorysize_;
+    }
+    if (cached_has_bits & 0x00000010u) {
+      resshift_ = from.resshift_;
+    }
+    if (cached_has_bits & 0x00000020u) {
       semaporekey_ = from.semaporekey_;
     }
     _has_bits_[0] |= cached_has_bits;
@@ -373,6 +438,8 @@ void MemoryConfig::InternalSwap(MemoryConfig* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
+  swap(memoryid_, other->memoryid_);
+  swap(semaporeid_, other->semaporeid_);
   swap(memorykey_, other->memorykey_);
   swap(memorysize_, other->memorysize_);
   swap(resshift_, other->resshift_);
